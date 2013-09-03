@@ -76,6 +76,7 @@ first one will be used. For example, Debian can have both Nagios 2 and
         idx += 1
         key,val = l.chomp.strip.split(/\s*=\s*/,2)
         raise "Incorrect configuration line ##{idx}: '#{l}'" unless key && val
+        raise "Incorrect configuration line ##{idx}: '#{l}'" unless key =~ /^[a-z_\d]+$/
 
         case key
           # There could be multiple entries for cfg_dir/file, so these
