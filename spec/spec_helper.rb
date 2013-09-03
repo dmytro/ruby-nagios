@@ -1,3 +1,6 @@
+require_relative "../lib/nagios"
+
+$package_top = File.dirname File.dirname __FILE__
 
 TEST = if ENV['RSPEC_ENV'] == 'test'
          { 
